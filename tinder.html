@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Algo mt fofo</title>
+  <style>
+    body {
+      background-color: #000000;
+      text-align: center;
+      padding-top: 100px;
+      font-family: Arial, sans-serif;
+    }
+
+    #message {
+      font-size: 36px;
+      color: red;
+      margin-bottom: 20px;
+    }
+
+    #hearts {
+      animation: heartbeat 1s infinite;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.3);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    #instagram-link {
+      display: block;
+      font-size: 24px;
+      color: red;
+      margin-top: 20px;
+      text-decoration: none;
+    }
+
+    #instagram-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="message"></h1>
+
+  <script>
+    var messageElement = document.getElementById("message");
+    var messageText = "oi amor, prazer em te conhecer! vamos iniciar o nosso amor a partir de agora. o link abaixo eh por onde vamos nos conhecer e flertar, ate la, beijos!";
+    var index = 0;
+
+    function typeMessage() {
+      if (index < messageText.length) {
+        messageElement.innerHTML += messageText.charAt(index);
+        index++;
+        setTimeout(typeMessage, 100);
+      } else {
+        var instagramLink = document.createElement("a");
+        instagramLink.id = "instagram-link";
+        instagramLink.href = "https://www.instagram.com/soyvitito/";
+        instagramLink.textContent = "Instagram";
+        document.body.appendChild(instagramLink);
+      }
+    }
+
+    typeMessage();
+  </script>
+
+  <div id="hearts">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/220px-Heart_coraz%C3%B3n.svg.png" alt="Coração">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/220px-Heart_coraz%C3%B3n.svg.png" alt="Coração">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/220px-Heart_coraz%C3%B3n.svg.png" alt="Coração">
+  </div>
+</body>
+</html>
